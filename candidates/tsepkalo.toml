@@ -1,0 +1,17 @@
+name_ru = "Цепкало Валерий"
+
+[[contacts]]
+link = "https://tsepkalo.by"
+description_ru = "Официальный сайт"
+
+[[contacts]]
+link = "https://www.youtube.com/channel/UCyNQ-QygZYwUgXSUQwFtzmQ/"
+description_ru = "Официальный youtube канал"
+
+[[contacts]]
+link = "https://www.instagram.com/tsepkalo.official"
+description_ru = "Instagram аккаунт"
+
+[[interviews]]
+link = "https://www.youtube.com/watch?v=hi4Xl7XHfYI"
+description_ru = "Интервью tut.by"

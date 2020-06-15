@@ -1,0 +1,21 @@
+name_ru = "Бабарико Виктор"
+
+[[contacts]]
+link = "https://babariko.by"
+description_ru = "Официальный сайт"
+
+[[contacts]]
+link = "https://www.youtube.com/channel/UCnMlkQPWeLjgiYcmayil6Bg"
+description_ru = "Официальный youtube канал"
+
+[[contacts]]
+link = "https://www.instagram.com/viktar_babaryka"
+description_ru = "Instagram аккаунт"
+
+[[contacts]]
+link = "https://www.tiktok.com/@viktar_babaryka"
+description_ru = "TikTok аккаунт"
+
+[[interviews]]
+link = "https://www.youtube.com/watch?v=VbCcLOAI3Ss"
+description_ru = "Интервью tut.by"
