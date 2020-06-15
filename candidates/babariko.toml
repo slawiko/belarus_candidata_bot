@@ -1,21 +1,37 @@
 name_ru = "Бабарико Виктор"
+name_by = "Бабарыка Виктар"
 
 [[contacts]]
 link = "https://babariko.by"
 description_ru = "Официальный сайт"
+description_by = "Афіцыйны сайт"
 
 [[contacts]]
 link = "https://www.youtube.com/channel/UCnMlkQPWeLjgiYcmayil6Bg"
 description_ru = "Официальный youtube канал"
+description_by = "Афіцыйны youtube канал"
 
 [[contacts]]
 link = "https://www.instagram.com/viktar_babaryka"
 description_ru = "Instagram аккаунт"
+description_by = "Instagram акаунт"
 
 [[contacts]]
 link = "https://www.tiktok.com/@viktar_babaryka"
 description_ru = "TikTok аккаунт"
+description_by = "TikTok акаунт"
 
 [[interviews]]
 link = "https://www.youtube.com/watch?v=VbCcLOAI3Ss"
-description_ru = "Интервью tut.by"
+description_ru = "Интервью порталу tut.by"
+description_by = "Інтэрв'ю парталу tut.by"
+
+[[interviews]]
+link = "https://www.youtube.com/watch?v=RTX4Bl_I2kA"
+description_ru = "Интервью каналу \"Баренцева\""
+description_by = "Інтэрв'ю каналу \"Баренцева\""
+
+[[interviews]]
+link = "https://www.youtube.com/watch?v=A4T9vmiuWBo"
+description_ru = "Кандыdating"
+description_by = "Кандыdating"

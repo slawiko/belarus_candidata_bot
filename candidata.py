@@ -10,7 +10,9 @@ from common import create_markup
 class Candidata:
     def __init__(self, data_folder="./candidates"):
         self.cand_name_id_map_ru = {}
+        self.cand_name_id_map_by = {}
         self.cand_id_name_map_ru = {}
+        self.cand_id_name_map_by = {}
         self.cat_ids = set()
         self.categories = []
         self.cat_markup = None
@@ -31,8 +33,11 @@ class Candidata:
     def read_file(self, cand_id, file):
         candidate = toml.loads(file.read())
         self.cand_name_id_map_ru[candidate['name_ru']] = cand_id
+        self.cand_name_id_map_by[candidate['name_by']] = cand_id
         self.cand_id_name_map_ru[cand_id] = candidate['name_ru']
+        self.cand_id_name_map_by[cand_id] = candidate['name_by']
         del candidate['name_ru']
+        del candidate['name_by']
         self.index[cand_id] = candidate
         self.cat_ids.update(list(candidate.keys()))
 

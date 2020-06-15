@@ -1,17 +1,38 @@
 name_ru = "Цепкало Валерий"
+name_by = "Цапкала Валерый"
 
 [[contacts]]
 link = "https://tsepkalo.by"
 description_ru = "Официальный сайт"
+description_by = "Афіцыйны сайт"
 
 [[contacts]]
 link = "https://www.youtube.com/channel/UCyNQ-QygZYwUgXSUQwFtzmQ/"
 description_ru = "Официальный youtube канал"
+description_by = "Афіцыйны youtube канал"
 
 [[contacts]]
 link = "https://www.instagram.com/tsepkalo.official"
 description_ru = "Instagram аккаунт"
+description_by = "Instagram акаунт"
 
 [[interviews]]
 link = "https://www.youtube.com/watch?v=hi4Xl7XHfYI"
-description_ru = "Интервью tut.by"
+description_ru = "Интервью порталу tut.by"
+description_by = "Інтэрв'ю парталу tut.by"
+
+[[interviews]]
+link = "https://www.youtube.com/watch?v=X9hUOCJJzwo"
+description_ru = "Интервью каналу \"Баренцева\""
+description_by = "Інтэрв'ю каналу \"Баренцева\""
+
+[[interviews]]
+link = "https://www.youtube.com/watch?v=F9PF7dMXX9w"
+description_ru = "Кандыdating"
+description_by = "Кандыdating"
+
+[[interviews]]
+link = "https://www.youtube.com/watch?v=KwlOUe28ztM"
+description_ru = "Интервью Эхо Москвы"
+description_by = "Інтэрв'ю Эхо Москвы"
+
