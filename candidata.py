@@ -9,10 +9,8 @@ from common import create_markup
 
 class Candidata:
     def __init__(self, data_folder="./candidates"):
-        self.cand_name_id_map_ru = {}
-        self.cand_name_id_map_by = {}
-        self.cand_id_name_map_ru = {}
-        self.cand_id_name_map_by = {}
+        self.cand_name_id_map = {}
+        self.cand_id_name_map = {}
         self.cat_ids = set()
         self.categories = []
         self.cat_markup = None
@@ -27,17 +25,14 @@ class Candidata:
             candidate_id = filename.split('.')[0]
             with open(join(data_folder, filename), mode='r', encoding='utf-8') as candidate_file:
                 self.read_file(candidate_id, candidate_file)
-        self.names = list(self.cand_name_id_map_ru.keys())
+        self.names = list(self.cand_name_id_map.keys())
         self.categories = list(map(category.humanize, self.cat_ids))
 
     def read_file(self, cand_id, file):
         candidate = toml.loads(file.read())
-        self.cand_name_id_map_ru[candidate['name_ru']] = cand_id
-        self.cand_name_id_map_by[candidate['name_by']] = cand_id
-        self.cand_id_name_map_ru[cand_id] = candidate['name_ru']
-        self.cand_id_name_map_by[cand_id] = candidate['name_by']
-        del candidate['name_ru']
-        del candidate['name_by']
+        self.cand_name_id_map[candidate['name']] = cand_id
+        self.cand_id_name_map[cand_id] = candidate['name']
+        del candidate['name']
         self.index[cand_id] = candidate
         self.cat_ids.update(list(candidate.keys()))
 
@@ -59,15 +54,15 @@ class Candidata:
         return self.cat_markup
 
     def get_categories_names(self):
-        categories = list(map(lambda x: category.id_name_map_ru[x], self.categories))
+        categories = list(map(lambda x: category.id_name_map[x], self.categories))
         return create_markup(categories)
 
     def humanize(self, cand_id):
-        cand_name = self.cand_id_name_map_ru[cand_id]
+        cand_name = self.cand_name_id_map[cand_id]
         return cand_name
 
     def dehumanize(self, cand_name):
-        cand_id = self.cand_name_id_map_ru[cand_name]
+        cand_id = self.cand_name_id_map[cand_name]
         return cand_id
 
 

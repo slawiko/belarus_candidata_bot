@@ -1,12 +1,9 @@
-name_ru = "Черечень Сергей"
-name_by = "Чэрэчэнь Сяргей"
+name = "Чэрэчэнь Сяргей"
 
 [[contacts]]
 link = "https://cherechen.by"
-description_ru = "Официальный сайт"
-description_by = "Афіцыйны сайт"
+description = "Афіцыйны сайт"
 
 [[interviews]]
 link = "https://www.youtube.com/watch?v=ABpDBp4EYao"
-description_ru = "Кандыdating"
-description_by = "Кандыdating"
+description = "Кандыdating"
