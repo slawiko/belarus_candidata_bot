@@ -10,11 +10,11 @@ description = "Афіцыйны youtube канал"
 
 [[contacts]]
 link = "https://www.instagram.com/viktar_babaryka"
-description = "Instagram акаунт"
+description = "Instagram акаўнт"
 
 [[contacts]]
 link = "https://www.tiktok.com/@viktar_babaryka"
-description = "TikTok акаунт"
+description = "TikTok акаўнт"
 
 [[interviews]]
 link = "https://www.youtube.com/watch?v=VbCcLOAI3Ss"
@@ -31,3 +31,11 @@ description = "Кандыdating"
 [[interviews]]
 link = "https://www.youtube.com/watch?v=Q20HYaM90oU"
 description = "Інтэрв'ю каналу \"MINSKI\""
+
+[[interviews]]
+link = "https://www.youtube.com/watch?v=MdrWeS08354"
+description = "Інтэрв'ю Эхо Москвы"
+
+[[interviews]]
+link = "https://www.youtube.com/watch?v=SwBFPU1tndY"
+description = "Інтэрв'ю Deutsche Welle Russia"
