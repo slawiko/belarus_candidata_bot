@@ -3,6 +3,7 @@
 
 import logging
 
+from telegram import ReplyKeyboardRemove
 from telegram.ext import Updater, ConversationHandler, CommandHandler, MessageHandler
 from telegram.ext.filters import Filters
 
@@ -54,9 +55,9 @@ def category_handler(update, context):
     del user_data['candidate']
     del user_data['category']
     update.message.reply_text(answer, disable_web_page_preview=True)
-    update.message.reply_text("Пра каго яшчэ вы хаціце даведацца?", reply_markup=data.get_candidates_keyboard())
+    update.message.reply_text("Звяртайцеся зноў /start", reply_markup=ReplyKeyboardRemove())
 
-    return CANDIDATE_CHOOSING
+    return ConversationHandler.END
 
 
 def wrong_handler(update, context):
