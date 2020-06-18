@@ -27,6 +27,7 @@ def compose_message(entries):
 
 def start_handler(update, context):
     greeting = "Пра каго вы хаціце даведацца?"
+    logger.info('User %s run %s command', update.effective_user.id, '/start')
     update.message.reply_text(greeting, reply_markup=data.get_candidates_keyboard())
 
     return CANDIDATE_CHOOSING
@@ -36,13 +37,14 @@ def contribute_handler(update, context):
     message = """
     Каб дадаць новые дадзеныя ці змяніць існуючыя трэба зрабіць Pull Request у рэпазіторый https://github.com/slawiko/belarus_elections_2020_bot
     """
+    logger.info('User %s run %s command', update.effective_user.id, '/contribute')
     update.message.reply_text(message)
 
 
 def candidate_handler(update, context):
     user_data = context.user_data
     user_data['candidate'] = update.message.text
-    logger.info('User clicked %s', user_data['candidate'])
+    logger.info('User %s choose %s candidate', update.effective_user.id, user_data['candidate'])
     update.message.reply_text("А што?", reply_markup=data.get_categories_keyboard())
 
     return CATEGORY_CHOOSING
@@ -51,6 +53,7 @@ def candidate_handler(update, context):
 def category_handler(update, context):
     user_data = context.user_data
     user_data['category'] = update.message.text
+    logger.info('User %s choose %s category', update.effective_user.id, user_data['category'])
     answer = compose_message(data.get(user_data['candidate'], user_data['category']))
     del user_data['candidate']
     del user_data['category']
@@ -61,6 +64,7 @@ def category_handler(update, context):
 
 
 def wrong_handler(update, context):
+    logger.info('User %s sent unrecognized text %s', update.effective_user.id, update.message.text)
     update.message.reply_text("Калі ласка, выкарыстоўвайце клавіятуру")
 
 
