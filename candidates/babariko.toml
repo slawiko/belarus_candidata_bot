@@ -20,6 +20,10 @@ description = "Instagram акаўнт"
 link = "https://www.tiktok.com/@viktar_babaryka"
 description = "TikTok акаўнт"
 
+[[contacts]]
+link = "https://t.me/viktarbabarykaofficial"
+description = "Telegram канал"
+
 [[interviews]]
 link = "https://www.youtube.com/watch?v=VbCcLOAI3Ss"
 description = "Інтэрв'ю парталу tut.by"
