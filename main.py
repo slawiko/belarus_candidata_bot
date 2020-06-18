@@ -73,7 +73,7 @@ def error(update, context):
 
 
 def main():
-    TOKEN = "1181133098:AAGhJpB4YQRfICPmjoVAdcUO3JMfDGu6V5Q"
+    TOKEN = ""
 
     updater = Updater(TOKEN, use_context=True)
 
