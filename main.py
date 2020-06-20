@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import logging
+import sys
 
 from telegram import ReplyKeyboardRemove
 from telegram.ext import Updater, ConversationHandler, CommandHandler, MessageHandler
@@ -72,10 +73,16 @@ def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 
-def main():
-    TOKEN = ""
+def timeout_handler(update, context):
+    user_data = context.user_data
+    user_data.clear()
+    logger.info('User %s received timeout', update.effective_user.id)
+    update.message.reply_text("Доўга вас не чулі. Звяртайцеся зноў /start", reply_markup=ReplyKeyboardRemove())
+    return ConversationHandler.END
 
-    updater = Updater(TOKEN, use_context=True)
+
+def main(token):
+    updater = Updater(token, use_context=True)
 
     dp = updater.dispatcher
 
@@ -87,7 +94,7 @@ def main():
             CANDIDATE_CHOOSING: [MessageHandler(create_filter(data.names), candidate_handler)],
             CATEGORY_CHOOSING: [MessageHandler(create_filter(data.categories), category_handler)],
         },
-        fallbacks=[MessageHandler(Filters.text, wrong_handler)]
+        fallbacks=[MessageHandler(Filters.all, wrong_handler)]
     )
 
     dp.add_handler(conv_handler)
@@ -98,4 +105,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    TOKEN = sys.argv[1]
+    main(TOKEN)
