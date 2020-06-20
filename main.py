@@ -53,24 +53,29 @@ def candidate_handler(update, context):
 
 def category_handler(update, context):
     user_data = context.user_data
+    if 'candidate' not in user_data:
+        update.message.reply_text("Давайце пачнем зноў /start", reply_markup=ReplyKeyboardRemove())
+        return ConversationHandler.END
     user_data['category'] = update.message.text
     logger.info('User %s choose %s category', update.effective_user.id, user_data['category'])
     answer = compose_message(data.get(user_data['candidate'], user_data['category']))
-    del user_data['candidate']
-    del user_data['category']
     update.message.reply_text(answer, disable_web_page_preview=True)
     update.message.reply_text("Звяртайцеся зноў /start", reply_markup=ReplyKeyboardRemove())
 
+    user_data.clear()
     return ConversationHandler.END
 
 
 def wrong_handler(update, context):
     logger.info('User %s sent unrecognized text %s', update.effective_user.id, update.message.text)
-    update.message.reply_text("Калі ласка, выкарыстоўвайце клавіятуру")
+    update.message.reply_text("Каб пачаць размову зноў выкарстоўвайце каманду /start")
+
+    return ConversationHandler.END
 
 
 def error(update, context):
-    logger.warning('Update "%s" caused error "%s"', update, context.error)
+    logger.error('Update "%s" caused error "%s"', update, context.error)
+    return ConversationHandler.END
 
 
 def timeout_handler(update, context):
@@ -88,11 +93,13 @@ def main(token):
 
     conv_handler = ConversationHandler(
         allow_reentry=True,
+        conversation_timeout=300,
         entry_points=[CommandHandler('start', start_handler),
                       CommandHandler('contribute', contribute_handler)],
         states={
             CANDIDATE_CHOOSING: [MessageHandler(create_filter(data.names), candidate_handler)],
             CATEGORY_CHOOSING: [MessageHandler(create_filter(data.categories), category_handler)],
+            ConversationHandler.TIMEOUT: [MessageHandler(Filters.all, timeout_handler)],
         },
         fallbacks=[MessageHandler(Filters.all, wrong_handler)]
     )
