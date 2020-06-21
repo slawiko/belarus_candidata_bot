@@ -23,8 +23,14 @@ name_id_map = {
 
 
 def humanize(cat_id):
-    return id_name_map[cat_id]
+    try:
+        return id_name_map[cat_id]
+    except KeyError:
+        return cat_id
 
 
 def dehumanize(cat_name):
-    return name_id_map[cat_name]
+    try:
+        return name_id_map[cat_name]
+    except KeyError:
+        return cat_name
