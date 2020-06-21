@@ -10,6 +10,7 @@ from telegram.ext.filters import Filters
 
 from candidata import data
 from common import create_filter
+from by import commands, states
 
 CATEGORY_CHOOSING, CANDIDATE_CHOOSING, ANSWER = range(3)
 
@@ -27,40 +28,33 @@ def compose_message(entries):
 
 
 def start_handler(update, context):
-    greeting = "Пра каго вы хаціце даведацца?"
     logger.info('User %s run %s command', update.effective_user.id, '/start')
-    update.message.reply_text(greeting, reply_markup=data.get_candidates_keyboard())
+    update.message.reply_text(commands.get('start'), reply_markup=data.get_candidates_keyboard())
 
     return CANDIDATE_CHOOSING
 
 
 def contribute_handler(update, context):
-    message = """
-    Каб дадаць новые дадзеныя ці змяніць існуючыя трэба зрабіць Pull Request у рэпазіторый https://github.com/slawiko/belarus_elections_2020_bot
-    """
     logger.info('User %s run %s command', update.effective_user.id, '/contribute')
-    update.message.reply_text(message)
+    update.message.reply_text(commands.get('contribute'))
 
 
 def candidate_handler(update, context):
     user_data = context.user_data
     user_data['candidate'] = update.message.text
     logger.info('User %s choose %s candidate', update.effective_user.id, user_data['candidate'])
-    update.message.reply_text("А што?", reply_markup=data.get_categories_keyboard())
+    update.message.reply_text(states.get('candidate'), reply_markup=data.get_categories_keyboard())
 
     return CATEGORY_CHOOSING
 
 
 def category_handler(update, context):
     user_data = context.user_data
-    if 'candidate' not in user_data:
-        update.message.reply_text("Давайце пачнем зноў /start", reply_markup=ReplyKeyboardRemove())
-        return ConversationHandler.END
     user_data['category'] = update.message.text
     logger.info('User %s choose %s category', update.effective_user.id, user_data['category'])
     answer = compose_message(data.get(user_data['candidate'], user_data['category']))
     update.message.reply_text(answer, disable_web_page_preview=True)
-    update.message.reply_text("Звяртайцеся зноў /start", reply_markup=ReplyKeyboardRemove())
+    update.message.reply_text(states.get('category'), reply_markup=ReplyKeyboardRemove())
 
     user_data.clear()
     return ConversationHandler.END
@@ -68,8 +62,7 @@ def category_handler(update, context):
 
 def wrong_handler(update, context):
     logger.info('User %s sent unrecognized text %s', update.effective_user.id, update.message.text)
-    update.message.reply_text("Каб пачаць размову зноў выкарстоўвайце каманду /start")
-
+    update.message.reply_text(states.get('wrong'), reply_markup=ReplyKeyboardRemove())
     return ConversationHandler.END
 
 
@@ -82,7 +75,7 @@ def timeout_handler(update, context):
     user_data = context.user_data
     user_data.clear()
     logger.info('User %s received timeout', update.effective_user.id)
-    update.message.reply_text("Доўга вас не чулі. Звяртайцеся зноў /start", reply_markup=ReplyKeyboardRemove())
+    update.message.reply_text(states.get('timeout'), reply_markup=ReplyKeyboardRemove())
     return ConversationHandler.END
 
 
