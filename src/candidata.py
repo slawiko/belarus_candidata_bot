@@ -3,12 +3,12 @@ from os.path import join
 
 import toml
 
-import category
-from common import create_markup
+from src import category
+from src.common import create_markup
 
 
 class Candidata:
-    def __init__(self, data_folder="./candidates"):
+    def __init__(self, data_folder="../candidates"):
         self.cand_name_id_map = {}
         self.cand_id_name_map = {}
         self.cat_ids = set()

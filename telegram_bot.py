@@ -8,9 +8,9 @@ from telegram import ReplyKeyboardRemove
 from telegram.ext import Updater, ConversationHandler, CommandHandler, MessageHandler
 from telegram.ext.filters import Filters
 
-from candidata import data
-from common import create_filter
-from by import commands, states
+from src.candidata import data
+from src.common import create_filter
+from src.by import commands, states
 
 CATEGORY_CHOOSING, CANDIDATE_CHOOSING, ANSWER = range(3)
 
