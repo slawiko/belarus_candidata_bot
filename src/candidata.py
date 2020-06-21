@@ -43,7 +43,7 @@ class Candidata:
 
     def get_candidates_keyboard(self):
         if not self.markup:
-            self.markup = create_markup(self.names)
+            self.markup = create_markup(self.names, shuffle=True)
 
         return self.markup
 

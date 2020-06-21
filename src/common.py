@@ -1,10 +1,13 @@
 from telegram import ReplyKeyboardMarkup
 from telegram.ext.filters import Filters
 
+import random
 
-def create_markup(keys):
+
+def create_markup(keys, shuffle=False):
     keyboard = []
-
+    if shuffle:
+        random.shuffle(keys)
     for i in range(0, len(keys), 2):
         keyboard.append(keys[i:i + 2])
 
