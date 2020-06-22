@@ -43,7 +43,7 @@ def candidate_handler(update, context):
     user_data = context.user_data
     user_data['candidate'] = update.message.text
     logger.info('User %s choose %s candidate', update.effective_user.id, user_data['candidate'])
-    update.message.reply_text(states.get('candidate'), reply_markup=data.get_categories_keyboard())
+    update.message.reply_text(states.get('candidate'), reply_markup=data.get_categories_keyboard(user_data['candidate']))
 
     return CATEGORY_CHOOSING
 
