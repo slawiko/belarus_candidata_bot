@@ -34,9 +34,9 @@ def start_handler(update, context):
     return CANDIDATE_CHOOSING
 
 
-def contribute_handler(update, context):
-    logger.info('User %s run %s command', update.effective_user.id, '/contribute')
-    update.message.reply_text(commands.get('contribute'))
+def help_handler(update, context):
+    logger.info('User %s run %s command', update.effective_user.id, '/help')
+    update.message.reply_text(commands.get('help'))
 
 
 def candidate_handler(update, context):
@@ -88,7 +88,7 @@ def main(token):
         allow_reentry=True,
         conversation_timeout=300,
         entry_points=[CommandHandler('start', start_handler),
-                      CommandHandler('contribute', contribute_handler)],
+                      CommandHandler('help', help_handler)],
         states={
             CANDIDATE_CHOOSING: [MessageHandler(create_filter(data.names), candidate_handler)],
             CATEGORY_CHOOSING: [MessageHandler(create_filter(data.categories), category_handler)],

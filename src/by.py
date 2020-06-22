@@ -1,6 +1,6 @@
 commands = {
     'start': "Пра каго вы хаціце даведацца?",
-    'contribute': "Каб дадаць новые дадзеныя ці змяніць існуючыя трэба зрабіць Pull Request у рэпазіторый https://github.com/slawiko/belarus_elections_2020_bot",
+    'help': "Каб дадаць новые дадзеныя ці змяніць існуючыя трэба зрабіць Pull Request у рэпазіторый https://github.com/slawiko/belarus_elections_2020_bot",
 }
 
 states = {
