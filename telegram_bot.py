@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 def compose_message(entries):
     result = ''
     for entry in entries:
-        result += '{}\n{}\n\n'.format(entry['description'], entry['link'])
+        result += '{}\n{}\n\n'.format(entry['description'], entry.get('link', ''))
     return result
 
 

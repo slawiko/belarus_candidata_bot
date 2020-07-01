@@ -2,23 +2,27 @@ CONTACTS_ID = 'contacts'
 TEXT_INTERVIEWS_ID = 'text-interviews'
 VIDEO_INTERVIEWS_ID = 'video-interviews'
 BIO_ID = 'bio'
+SOME_ID = 'some'
 
 CONTACTS_NAME = 'Кантакты'
 TEXT_INTERVIEWS_NAME = 'Тэкставыя інтэрв\'ю'
 VIDEO_INTERVIEWS_NAME = 'Відэа-інтэрв\'ю'
 BIO_NAME = 'Біяграфія'
+SOME_NAME = 'Што небудзь'
 
 id_name_map = {
     CONTACTS_ID: CONTACTS_NAME,
     TEXT_INTERVIEWS_ID: TEXT_INTERVIEWS_NAME,
     VIDEO_INTERVIEWS_ID: VIDEO_INTERVIEWS_NAME,
     BIO_ID: BIO_NAME,
+    SOME_ID: SOME_NAME,
 }
 name_id_map = {
     CONTACTS_NAME: CONTACTS_ID,
     TEXT_INTERVIEWS_NAME: TEXT_INTERVIEWS_ID,
     VIDEO_INTERVIEWS_NAME: VIDEO_INTERVIEWS_ID,
     BIO_NAME: BIO_ID,
+    SOME_NAME: SOME_ID,
 }
 
 
