@@ -48,6 +48,10 @@ description = "Інтэрв'ю каналу \"MINSKI\""
 link = "https://www.youtube.com/watch?v=GgVzIu9G76s"
 description = "Інтэрв'ю Realt.by"
 
+[[video-interviews]]
+link = "https://www.youtube.com/watch?v=7UPJkocqOos"
+description = "Інтэрв'ю Deutsche Welle Russia"
+
 [[text-interviews]]
 link = "https://www.golos-ameriki.ru/a/belarus-elections-tsepkalo-interview/5468170.html"
 description = "Інтэрв'ю \"Голос Америки\""
@@ -71,3 +75,7 @@ description = "Інтэрв'ю Forbes"
 [[text-interviews]]
 link = "https://lenta.ru/articles/2020/06/30/cepkalo/"
 description = "Інтэрв'ю Lenta.ru"
+
+[[text-interviews]]
+link = "https://by.tribuna.com/tribuna/blogs/drovosek/2799034.html"
+description = "Інтэрв'ю Tribuna"
