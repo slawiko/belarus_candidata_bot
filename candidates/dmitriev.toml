@@ -9,7 +9,7 @@ link = "https://www.youtube.com/watch?v=-cgTzYe1CCw"
 description = "Кандыdating"
 
 [[contacts]]
-link = "https://www.facebook.com/DmitrievAndrei/"
+link = "https://www.facebook.com/DmitrievAndrei"
 description = "Facebook акаўнт"
 
 [[video-interviews]]
@@ -21,5 +21,5 @@ link = "https://www.youtube.com/watch?v=Pr1UEut5F1k"
 description = "Інтэрв'ю Белсат"
 
 [[text-interviews]]
-link = "https://www.mk.ru/politics/2020/06/17/kandidat-v-prezidenty-belorussii-rasskazal-o-repressiyakh-i-proslushke.html?fbclid=IwAR3xIaX_uXT9hC1uO-nTPNaXzT0Sxsv678kA0QijDwPhOd6Twz65iKc5D1w"
+link = "https://www.mk.ru/politics/2020/06/17/kandidat-v-prezidenty-belorussii-rasskazal-o-repressiyakh-i-proslushke.html"
 description = "Інтэрв'ю \"MK.ru\""
