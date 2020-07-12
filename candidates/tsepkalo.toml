@@ -52,6 +52,10 @@ description = "Інтэрв'ю Realt.by"
 link = "https://www.youtube.com/watch?v=7UPJkocqOos"
 description = "Інтэрв'ю Deutsche Welle Russia"
 
+[[video-interviews]]
+link = "https://www.youtube.com/watch?v=Vxvaq73fgQY"
+description = "Інтэрв'ю BBC"
+
 [[text-interviews]]
 link = "https://www.golos-ameriki.ru/a/belarus-elections-tsepkalo-interview/5468170.html"
 description = "Інтэрв'ю \"Голос Америки\""
@@ -79,3 +83,7 @@ description = "Інтэрв'ю Lenta.ru"
 [[text-interviews]]
 link = "https://by.tribuna.com/tribuna/blogs/drovosek/2799034.html"
 description = "Інтэрв'ю Tribuna"
+
+[[text-interviews]]
+link = "https://www.nationalreview.com/2020/07/interview-valery-tsepkalo-opposition-candidate-president-belarus"
+description = "Інтэрв'ю National Review"
