@@ -1,4 +1,5 @@
 name = "Цапкала Валерый"
+enabled = false
 
 [[bio]]
 link = "https://tsepkalo.by"

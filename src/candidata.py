@@ -28,8 +28,11 @@ class Candidata:
 
     def read_file(self, file):
         candidate = toml.loads(file.read())
+        if not candidate['enabled']:
+            return
         cand_name = candidate['name']
         del candidate['name']
+        del candidate['enabled']
         self.index[cand_name] = candidate
         self.cat_ids.update(list(candidate.keys()))
 
