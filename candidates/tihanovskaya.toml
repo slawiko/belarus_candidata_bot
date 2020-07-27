@@ -1,6 +1,10 @@
 name = "Ціханоўская Святлана"
 enabled = true
 
+[[contacts]]
+link = "https://tsikhanouskaya2020.by"
+description = "Афіцыйны сайт"
+
 [[video-interviews]]
 link = "https://www.youtube.com/watch?v=h22WAyubiT4"
 description = "Пытаннечкі"
