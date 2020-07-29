@@ -6,6 +6,9 @@ COPY ./requirements.txt ./
 
 RUN pip install -r requirements.txt
 
-COPY ./ ./
+COPY ./telegram_bot.py ./
+COPY ./src ./
+
+COPY ./candidates ./
 
 ENTRYPOINT ["/usr/local/bin/python", "telegram_bot.py"]
