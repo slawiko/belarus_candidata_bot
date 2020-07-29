@@ -5,6 +5,10 @@ enabled = true
 link = "https://tsikhanouskaya2020.by"
 description = "Афіцыйны сайт"
 
+[[program]]
+link = "https://tsikhanouskaya2020.by/moya_programma"
+description = "Праграма"
+
 [[video-interviews]]
 link = "https://www.youtube.com/watch?v=h22WAyubiT4"
 description = "Пытаннечкі"

@@ -37,6 +37,10 @@ description = "Акаўнт у VK"
 link = "https://ok.ru/group/57723949547647"
 description = "Акаўнт у Аднакласніках"
 
+[[program]]
+link = "https://cherechen.by/programma"
+description = "Праграма"
+
 [[video-interviews]]
 link = "https://www.youtube.com/watch?v=ABpDBp4EYao"
 description = "Кандыdating"
@@ -45,6 +49,6 @@ description = "Кандыdating"
 link = "https://www.youtube.com/watch?v=ggk49eD5JyY"
 description = "Інтэрв'ю Realt.by"
 
-`[[video-interviews]]
+[[video-interviews]]
 link = "https://www.youtube.com/watch?v=E2tbwMHOCM8"
 description = "Пытаннечкі"
